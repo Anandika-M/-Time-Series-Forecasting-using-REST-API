@@ -52,6 +52,5 @@ pip install streamlit pandas numpy yfinance seaborn matplotlib statsmodels sciki
 1. Save the script as app.py
 2. Run the streamlit app
    ```bash
-   streamlit run app.py
-```
+   streamlit run app.py```
 3. Open the provided local URL in your browser.
