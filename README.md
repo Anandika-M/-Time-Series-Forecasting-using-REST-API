@@ -45,8 +45,8 @@ pip install streamlit pandas numpy yfinance seaborn matplotlib statsmodels sciki
    - Root Mean Squared Error (RMSE)
    - Mean Absolute Percentage Error (MAPE)
 8. Visualization
-  - Interactive plots comparing actual vs forecasted prices.
-  - Train/test split visualization.
+   - Interactive plots comparing actual vs forecasted prices.
+   - Train/test split visualization.
 
 ## How to run
 1. Save the script as app.py
