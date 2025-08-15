@@ -28,25 +28,25 @@ pip install streamlit pandas numpy yfinance seaborn matplotlib statsmodels sciki
 ```
 ## Features
 1. Data retreival:
-    Fetch stock price data from Yahoo Finance.
-    Clean, preprocess, and store data in Streamlit's session state.
+    - Fetch stock price data from Yahoo Finance.
+    - Clean, preprocess, and store data in Streamlit's session state.
 2. Data exploration:
-   Line charts for stock closing prices.
-   Monthly heatmaps of average prices.
+   - Line charts for stock closing prices.
+   - Monthly heatmaps of average prices.
   Autocorrelation plots.
 4. Forecasting models
-   ARIMA – Autoregressive Integrated Moving Average.
-   SARIMA – Seasonal ARIMA.
+   - ARIMA – Autoregressive Integrated Moving Average.
+   - SARIMA – Seasonal ARIMA.
    Random Forest – Tree-based regression.
-   XGBoost – Gradient boosting regression.
-   LSTM – Long Short-Term Memory neural network.
+   - XGBoost – Gradient boosting regression.
+   - LSTM – Long Short-Term Memory neural network.
 6. Evaluation metrics
-   Mean Absolute Error (MAE)
-   Root Mean Squared Error (RMSE)
-   Mean Absolute Percentage Error (MAPE)
+   - Mean Absolute Error (MAE)
+   - Root Mean Squared Error (RMSE)
+   - Mean Absolute Percentage Error (MAPE)
 8. Visualization
-  Interactive plots comparing actual vs forecasted prices.
-  Train/test split visualization.
+  - Interactive plots comparing actual vs forecasted prices.
+  - Train/test split visualization.
 
 ## How to run
 1. Save the script as app.py
