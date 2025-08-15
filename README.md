@@ -1,4 +1,4 @@
-# -Time-Series-Forecasting-using-REST-API
+# REST-API Powered Stock Price Forecasting Dashboard
 Time-series data is widely used in domains like finance, weather forecasting, sales analysis,  and healthcare. This project is a **Streamlit-based interactive dashboard** for performing time series forecasting on stock market data.  
 It works to:
 - Retrieve historical stock prices from Yahoo Finance.
