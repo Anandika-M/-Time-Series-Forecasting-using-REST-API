@@ -20,7 +20,7 @@ warnings.filterwarnings("ignore")
 def calculate_metrics(y_true, y_pred):
     """Calculate MAE, RMSE, and MAPE for model evaluation."""
     if isinstance(y_true, pd.DataFrame):
-        y_true = y_true.iloc[:, 0]  # Extract first column if DataFrame
+        y_true = y_true.iloc[:, 0]
     if isinstance(y_pred, np.ndarray):
         y_pred = pd.Series(y_pred, index=y_true.index)
     elif isinstance(y_pred, pd.DataFrame):
@@ -29,7 +29,7 @@ def calculate_metrics(y_true, y_pred):
     y_true = y_true.reset_index(drop=True)
     y_pred = y_pred.reset_index(drop=True)
     
-    mask = y_true != 0  # Avoid division by zero
+    mask = y_true != 0
     
     mae = mean_absolute_error(y_true, y_pred)
     rmse = np.sqrt(mean_squared_error(y_true, y_pred))
@@ -37,7 +37,7 @@ def calculate_metrics(y_true, y_pred):
     
     return mae, rmse, mape
 
-st.title("📊 Time Series Forecasting Dashboard")
+st.title("Time Series Forecasting Dashboard")
 
 # Section 1: Data Retrieval
 st.header("Data Retrieval")
@@ -50,7 +50,7 @@ if st.button("Fetch Data"):
             data.drop_duplicates(inplace=True)
             data.index = pd.to_datetime(data.index)
             data.index = data.index.tz_localize(None)
-            st.session_state['data'] = data  # Save to session state
+            st.session_state['data'] = data
             st.success(f"Data for {symbol} fetched successfully.")
             st.write(data.tail())
         else:
@@ -61,12 +61,12 @@ if st.button("Fetch Data"):
 # Section 2: Data Cleaning and Preprocessing
 if 'data' in st.session_state:
     data = st.session_state['data']
-    with st.expander("🔄 Data Cleaning and Preprocessing", expanded=False):
+    with st.expander("Data Cleaning and Preprocessing", expanded=False):
         st.write(f"Cleaned Data Shape: {data.shape}")
         st.write(data.head())
 
     # Exploratory Data Analysis
-    with st.expander("📊 Exploratory Data Analysis", expanded=False):
+    with st.expander("Exploratory Data Analysis", expanded=False):
         st.subheader("Line Plot of Close Prices")
         st.line_chart(data['Close'])
 
@@ -94,7 +94,7 @@ if 'data' in st.session_state:
             st.warning("The data is non-stationary (p >= 0.05)")
 
     # Model Selection
-    st.header("⚙ Model Building and Evaluation")
+    st.header("Model Building and Evaluation")
     model_type = st.selectbox("Choose Model", ["ARIMA", "SARIMA", "Random Forest", "XGBoost", "LSTM"])
     split_ratio = st.slider("Train/Test Split", 0.7, 0.95, 0.8)
     split_index = int(len(data) * split_ratio)
@@ -150,4 +150,5 @@ if 'data' in st.session_state:
     plt.plot(test, label='Test')
     plt.plot(test.index, forecast, label=f"{model_type} Forecast")
     plt.legend()
+
     st.pyplot(plt.gcf())
